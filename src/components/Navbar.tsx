@@ -15,10 +15,8 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Reviews', href: '#reviews' },
+    { name: 'Personal', href: '#about' },
+    { name: 'Commercial', href: '#services' },
     { name: 'Contact', href: '#contact' }
   ];
 
@@ -39,33 +37,21 @@ const Navbar: React.FC = () => {
       }
     `}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex items-center">
-            <div className={`
-              flex items-center space-x-2 transition-colors duration-300
-              ${isScrolled ? 'text-blue-900' : 'text-white'}
-            `}>
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <Shield className="h-6 w-6 text-white" />
-              </div>
-              <span className="text-xl font-bold">Lambert Brothers</span>
-            </div>
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+        <div className="flex items-center justify-between h-20">
+          {/* Desktop Navigation - Right Aligned */}
+          <div className="hidden md:flex md:ml-auto">
+            <div className="flex items-baseline space-x-8">
               {navItems.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
                   className={`
-                    px-3 py-2 rounded-md text-sm font-medium transition-all duration-300
-                    hover:scale-105 hover:shadow-lg
+                    relative px-3 py-2 text-base font-medium transition-all duration-300
+                    after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#2e2d78]
+                    after:transition-all after:duration-300 hover:after:w-full
                     ${isScrolled 
-                      ? 'text-gray-700 hover:text-blue-600 hover:bg-blue-50' 
-                      : 'text-white hover:text-blue-300 hover:bg-white/10'
+                      ? 'text-gray-700 hover:text-[#2e2d78]' 
+                      : 'text-white hover:text-[#2e2d78]'
                     }
                   `}
                 >
@@ -73,23 +59,6 @@ const Navbar: React.FC = () => {
                 </button>
               ))}
             </div>
-          </div>
-
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <button
-              onClick={() => scrollToSection('#contact')}
-              className={`
-                px-6 py-2 rounded-full font-semibold transition-all duration-300 transform
-                hover:scale-105 hover:shadow-lg
-                ${isScrolled 
-                  ? 'bg-blue-600 text-white hover:bg-blue-700' 
-                  : 'bg-white text-blue-900 hover:bg-blue-50'
-                }
-              `}
-            >
-              Get Quote
-            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -118,17 +87,11 @@ const Navbar: React.FC = () => {
             <button
               key={item.name}
               onClick={() => scrollToSection(item.href)}
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 w-full text-left transition-colors duration-300"
+              className="block w-full px-3 py-2 text-base font-medium text-left text-[#2e2d78]"
             >
               {item.name}
             </button>
           ))}
-          <button
-            onClick={() => scrollToSection('#contact')}
-            className="block w-full mt-4 px-3 py-2 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition-colors duration-300"
-          >
-            Get Quote
-          </button>
         </div>
       </div>
     </nav>
