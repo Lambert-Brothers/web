@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "//lambert-brothers.github.io/web/static/css/main.f82877f4.css",
-    "main.js": "//lambert-brothers.github.io/web/static/js/main.7ca89f6b.js",
-    "static/media/commercial-modal.jpg": "//lambert-brothers.github.io/web/static/media/commercial-modal.34a179083e7d825a9160.jpg",
-    "static/media/offices.jpg": "//lambert-brothers.github.io/web/static/media/offices.a0d5d965fc8f9cf04900.jpg",
-    "static/media/commercial.jpg": "//lambert-brothers.github.io/web/static/media/commercial.fa079c0e04ec7413b7cf.jpg",
-    "static/media/family.jpg": "//lambert-brothers.github.io/web/static/media/family.771721d5e0132570c160.jpg",
-    "static/media/personal.jpg": "//lambert-brothers.github.io/web/static/media/personal.f3fadad8ae21acea9b9a.jpg",
-    "static/media/her.jpg": "//lambert-brothers.github.io/web/static/media/her.501f502e84fc434d4f40.jpg",
-    "static/media/personal-modal.jpg": "//lambert-brothers.github.io/web/static/media/personal-modal.8fa9848152943a7ae08f.jpg",
-    "index.html": "//lambert-brothers.github.io/web/index.html",
-    "main.f82877f4.css.map": "//lambert-brothers.github.io/web/static/css/main.f82877f4.css.map",
-    "main.7ca89f6b.js.map": "//lambert-brothers.github.io/web/static/js/main.7ca89f6b.js.map"
+    "main.css": "/web/static/css/main.f82877f4.css",
+    "main.js": "/web/static/js/main.267fc44f.js",
+    "static/media/commercial-modal.jpg": "/web/static/media/commercial-modal.34a179083e7d825a9160.jpg",
+    "static/media/offices.jpg": "/web/static/media/offices.a0d5d965fc8f9cf04900.jpg",
+    "static/media/commercial.jpg": "/web/static/media/commercial.fa079c0e04ec7413b7cf.jpg",
+    "static/media/family.jpg": "/web/static/media/family.771721d5e0132570c160.jpg",
+    "static/media/personal.jpg": "/web/static/media/personal.f3fadad8ae21acea9b9a.jpg",
+    "static/media/her.jpg": "/web/static/media/her.501f502e84fc434d4f40.jpg",
+    "static/media/personal-modal.jpg": "/web/static/media/personal-modal.8fa9848152943a7ae08f.jpg",
+    "index.html": "/web/index.html",
+    "main.f82877f4.css.map": "/web/static/css/main.f82877f4.css.map",
+    "main.267fc44f.js.map": "/web/static/js/main.267fc44f.js.map"
   },
   "entrypoints": [
     "static/css/main.f82877f4.css",
-    "static/js/main.7ca89f6b.js"
+    "static/js/main.267fc44f.js"
   ]
 }
