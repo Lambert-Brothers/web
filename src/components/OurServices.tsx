@@ -3,12 +3,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import { X } from 'lucide-react';
 
 // ──────────────────────── Import assets ────────────────────────
-import domesticImg from '../assets/domestic.jpg';           // Reusing old personal as domestic
+import domesticImg from '../assets/domestic.jpg';
 import commercialImg from '../assets/commercial.jpg';
 import specialistImg from '../assets/specialist.jpg';
 import personalNewImg from '../assets/personal.jpg';
 
-import domesticModalImg from '../assets/personal-modal.jpg';   // Reusing
+import domesticModalImg from '../assets/personal-modal.jpg';   
 import commercialModalImg from '../assets/commercial-modal.jpg';
 import specialistModalImg from '../assets/specialist-modal.jpg';
 import personalNewModalImg from '../assets/domestic-modal.jpg';
@@ -89,7 +89,7 @@ const OurServices: React.FC = () => {
         'Your world deserves the right protection - whether it’s the home you’ve built, the car you drive, or the things that make life special. At Lambert Brothers, we take a hands-on approach to helping you choose cover that fits your lifestyle, giving you peace of mind when it matters most.',
       description2:
         'With access to leading insurers and decades of expertise, we’ll guide you through the options and tailor a solution that protects what matters most to you and your family.',
-      delay: '200ms',
+      delay: '0ms',
     },
     {
       title: 'COMMERCIAL',
@@ -102,7 +102,7 @@ const OurServices: React.FC = () => {
         'Your business is your legacy, and protecting it requires more than just coverage — it demands strategic foresight. At Lambert Brothers, we partner with you to understand your operations, risks, and goals, crafting robust commercial insurance solutions that safeguard your assets, employees, and future growth.',
       description2:
         'From liability and property protection to specialised industry coverage, our access to top-tier insurers and decades of expertise ensure your business is resilient, compliant, and ready for whatever comes next.',
-      delay: '400ms',
+      delay: '200ms',
     },
     {
       title: 'SPECIALIST',
@@ -115,7 +115,7 @@ const OurServices: React.FC = () => {
         'For unique risks that demand tailored solutions — from agriculture and commercial transporters to special events and hospitality — we deliver specialist short-term insurance that goes beyond standard policies.',
       description2:
         'With deep industry knowledge and partnerships with niche insurers, we protect high-value assets, seasonal operations, and complex exposures with precision and confidence.',
-      delay: '600ms',
+      delay: '400ms',
     },
     {
       title: 'PERSONAL',
@@ -128,7 +128,7 @@ const OurServices: React.FC = () => {
         'Your health, life, and financial future matter. We specialise in medical aid, gap cover, life insurance, and income protection — ensuring you and your loved ones are covered when it counts.',
       description2:
         'With access to top medical schemes and life insurers, we simplify complex choices and design plans that evolve with your life stages.',
-      delay: '800ms',
+      delay: '600ms',
     },
   ];
 
@@ -181,6 +181,7 @@ const OurServices: React.FC = () => {
                     src={service.img}
                     alt={service.title}
                     className="w-full h-[28rem] object-cover"
+                    loading="lazy"
                   />
                 </div>
 
