@@ -1,20 +1,25 @@
 {
   "files": {
-    "main.css": "/web/static/css/main.f82877f4.css",
-    "main.js": "/web/static/js/main.267fc44f.js",
+    "main.css": "/web/static/css/main.42375691.css",
+    "main.js": "/web/static/js/main.92f9f787.js",
     "static/media/commercial-modal.jpg": "/web/static/media/commercial-modal.34a179083e7d825a9160.jpg",
     "static/media/offices.jpg": "/web/static/media/offices.a0d5d965fc8f9cf04900.jpg",
+    "static/media/specialist.jpg": "/web/static/media/specialist.a053acc220434b9562cb.jpg",
+    "static/media/specialist-modal.jpg": "/web/static/media/specialist-modal.600586475397a08e9aff.jpg",
+    "static/media/domestic-modal.jpg": "/web/static/media/domestic-modal.a9321d033b4e1a8ffe88.jpg",
     "static/media/commercial.jpg": "/web/static/media/commercial.fa079c0e04ec7413b7cf.jpg",
     "static/media/family.jpg": "/web/static/media/family.771721d5e0132570c160.jpg",
     "static/media/personal.jpg": "/web/static/media/personal.f3fadad8ae21acea9b9a.jpg",
     "static/media/her.jpg": "/web/static/media/her.501f502e84fc434d4f40.jpg",
+    "static/media/domestic.jpg": "/web/static/media/domestic.4a846d1bb0c3e067bac4.jpg",
     "static/media/personal-modal.jpg": "/web/static/media/personal-modal.8fa9848152943a7ae08f.jpg",
+    "static/media/JPEG_LB_Logo-removebg-preview.png": "/web/static/media/JPEG_LB_Logo-removebg-preview.637e7b0e02d8dc801111.png",
     "index.html": "/web/index.html",
-    "main.f82877f4.css.map": "/web/static/css/main.f82877f4.css.map",
-    "main.267fc44f.js.map": "/web/static/js/main.267fc44f.js.map"
+    "main.42375691.css.map": "/web/static/css/main.42375691.css.map",
+    "main.92f9f787.js.map": "/web/static/js/main.92f9f787.js.map"
   },
   "entrypoints": [
-    "static/css/main.f82877f4.css",
-    "static/js/main.267fc44f.js"
+    "static/css/main.42375691.css",
+    "static/js/main.92f9f787.js"
   ]
 }
