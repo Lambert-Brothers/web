@@ -71,6 +71,7 @@ const OurServices: React.FC = () => {
       {/* ──────────────────────── MAIN SECTION ──────────────────────── */}
       <section
         ref={sectionRef}
+        id="services"
         className="py-24 relative overflow-hidden"
         style={{ backgroundColor: '#e4e8ee' }}
       >

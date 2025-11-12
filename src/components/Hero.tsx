@@ -127,7 +127,7 @@ const Hero: React.FC = () => {
 
         {/* ---- CTA Button ---- */}
         <a
-          href="#get-quote"
+          href="#contact"
           style={{
             display: 'inline-block',
             backgroundColor: '#2e2d78',
