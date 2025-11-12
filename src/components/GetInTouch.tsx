@@ -148,7 +148,7 @@ useEffect(() => {
             <Linkedin className="w-5 h-5" style={{ color: '#2e2d78' }} />
           </a>
           <a
-            href="https://www.google.com/maps/search/?api=1&query=Suite+6+Sunbury+Park%2C+1+Sunbury+Crescent%2C+Douglas+Saunders+Drive%2C+La+Lucia%2C+4051"
+            href="https://www.google.com/maps/search/?api=1&query=Lambert+Brothers+CC%2C+Suite+6%2C+1+Sunbury+Park%2C+Douglas+Saunders+drive%2C+La+Lucia%2C+4051"
             target="_blank"
             rel="noopener noreferrer"
             className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-transform"

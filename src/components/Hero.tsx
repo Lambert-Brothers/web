@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import heroImage from '../assets/her.jpg';
-import logoImage from '../assets/LB-logo.jpg';
+import logoImage from '../assets/JPEG_LB_Logo-removebg-preview.png';
 
 const Hero: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);   // for text/logo
@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
       <div
         style={{
           position: 'absolute',
-          top: '40px',
+          top: '-30px',
           left: '10%',
           zIndex: 3,
           opacity: isVisible ? 1 : 0,
@@ -77,7 +77,7 @@ const Hero: React.FC = () => {
         <img
           src={logoImage}
           alt="Lambert Brothers Logo"
-          style={{ height: '200px', width: 'auto' }}
+          style={{ height: '400px', width: 'auto' }}
         />
       </div>
 
