@@ -1,5 +1,6 @@
 {
   "name": "lambert-brothers-insurance",
+  "homepage": "https://lambertbrothersinsurance.co.za",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
