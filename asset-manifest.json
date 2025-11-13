@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/web/static/css/main.4a1f6e8f.css",
-    "main.js": "/web/static/js/main.91f0a61d.js",
+    "main.css": "/web/static/css/main.7ff0b4fd.css",
+    "main.js": "/web/static/js/main.3d070850.js",
     "static/media/commercial-modal.webp": "/web/static/media/commercial-modal.59a859fc6c4790d7d31e.webp",
     "static/media/offices.webp": "/web/static/media/offices.898cf2fd596e728ce2f5.webp",
     "static/media/specialist-modal.webp": "/web/static/media/specialist-modal.4928d1337b0e3f48a202.webp",
@@ -15,11 +15,11 @@
     "static/media/personal-modal.webp": "/web/static/media/personal-modal.56b8220565160dd4128f.webp",
     "static/media/JPEG_LB_Logo-removebg-preview.webp": "/web/static/media/JPEG_LB_Logo-removebg-preview.eac86281152274f1d956.webp",
     "index.html": "/web/index.html",
-    "main.4a1f6e8f.css.map": "/web/static/css/main.4a1f6e8f.css.map",
-    "main.91f0a61d.js.map": "/web/static/js/main.91f0a61d.js.map"
+    "main.7ff0b4fd.css.map": "/web/static/css/main.7ff0b4fd.css.map",
+    "main.3d070850.js.map": "/web/static/js/main.3d070850.js.map"
   },
   "entrypoints": [
-    "static/css/main.4a1f6e8f.css",
-    "static/js/main.91f0a61d.js"
+    "static/css/main.7ff0b4fd.css",
+    "static/js/main.3d070850.js"
   ]
 }
