@@ -136,6 +136,7 @@ useEffect(() => {
             target="_blank"
             rel="noopener noreferrer"
             className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-transform"
+            title='Open Facebook'
           >
             <Facebook className="w-5 h-5" style={{ color: '#2e2d78' }} />
           </a>
@@ -144,6 +145,7 @@ useEffect(() => {
             target="_blank"
             rel="noopener noreferrer"
             className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-transform"
+            title='Open LinkedIn'
           >
             <Linkedin className="w-5 h-5" style={{ color: '#2e2d78' }} />
           </a>
@@ -152,6 +154,7 @@ useEffect(() => {
             target="_blank"
             rel="noopener noreferrer"
             className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-transform"
+            title='Open Google Maps'
           >
             <svg className="w-5 h-5" style={{ color: '#2e2d78' }} viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
