@@ -71,15 +71,15 @@ const OurServices: React.FC = () => {
   const [activeModal, setActiveModal] = useState<string | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
-  /* Trigger animation when 90% of section is in viewport */
+  /* Trigger animation when 80% of section is in viewport */
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && entry.intersectionRatio >= 0.9) {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
           setIsVisible(true);
         }
       },
-      { threshold: 0.9 }
+      { threshold: 0.8 }
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
@@ -134,8 +134,12 @@ const OurServices: React.FC = () => {
                 key={service.id}
                 className={`max-w-2xl mx-auto text-center transition-all duration-1000 ${
                   isVisible
+                    ? index % 2 === 0
                     ? 'translate-y-0 opacity-100'
-                    : 'translate-y-24 opacity-0'
+                    : '-translate-y-0 opacity-100'
+                    : index % 2 === 0
+                    ? 'translate-y-24 opacity-0'
+                    : '-translate-y-24 opacity-0'
                 }`}
                 style={{ transitionDelay: `${300 + index * 200}ms` }}
               >
