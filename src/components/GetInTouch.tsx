@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Phone, Mail, Linkedin, Facebook } from 'lucide-react';
-import officeimg from '../assets/offices.jpg';
+import officeimg from '../assets/offices.webp';
 
 const GetInTouch: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);

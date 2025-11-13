@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { CheckCircle } from 'lucide-react';
-import familyImage from '../assets/family.jpg'; // Ensure this path is correct
+import familyImage from '../assets/family.webp'; // Ensure this path is correct
 
 const AboutUs: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);

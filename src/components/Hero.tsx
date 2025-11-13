@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import heroImage from '../assets/her.jpg';
-import logoImage from '../assets/JPEG_LB_Logo-removebg-preview.png';
+import heroImage from '../assets/her.webp';
+import logoImage from '../assets/JPEG_LB_Logo-removebg-preview.webp';
 
 const Hero: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);   // for text/logo
