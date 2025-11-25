@@ -75,11 +75,11 @@ const OurServices: React.FC = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
           setIsVisible(true);
         }
       },
-      { threshold: 0.8 }
+      { threshold: 0.5 }
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
@@ -110,17 +110,15 @@ const OurServices: React.FC = () => {
           {/* Headings */}
           <div className="text-center mb-12">
             <h1
-              className={`text-5xl md:text-6xl font-bold transition-all duration-1000 ${
-                isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-              }`}
+              className={`text-5xl md:text-6xl font-bold transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                }`}
               style={{ color: '#2e2d78' }}
             >
               LET'S PROTECT
             </h1>
             <p
-              className={`text-2xl md:text-3xl font-medium mt-2 transition-all duration-1000 delay-200 ${
-                isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-              }`}
+              className={`text-2xl md:text-3xl font-medium mt-2 transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                }`}
               style={{ color: '#2e2d78' }}
             >
               WHAT MATTERS MOST
@@ -132,15 +130,14 @@ const OurServices: React.FC = () => {
             {services.map((service, index) => (
               <div
                 key={service.id}
-                className={`max-w-2xl mx-auto text-center transition-all duration-1000 ${
-                  isVisible
-                    ? index % 2 === 0
+                className={`max-w-2xl mx-auto text-center transition-all duration-1000 ${isVisible
+                  ? index % 2 === 0
                     ? 'translate-y-0 opacity-100'
                     : '-translate-y-0 opacity-100'
-                    : index % 2 === 0
+                  : index % 2 === 0
                     ? 'translate-y-24 opacity-0'
                     : '-translate-y-24 opacity-0'
-                }`}
+                  }`}
                 style={{ transitionDelay: `${300 + index * 200}ms` }}
               >
                 <div className="overflow-hidden rounded-xl shadow-2xl mb-4 bg-white">

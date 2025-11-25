@@ -1,35 +1,46 @@
 import React, { useState, useEffect, useRef } from 'react';
-import heroImage from '../assets/her.webp';
-import logoImage from '../assets/JPEG_LB_Logo-removebg-preview.webp';
+import heroImage from '../assets/hero.jpg';
+import logoImage from '../assets/Lambert Brothers.svg';
 
 const Hero: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);   // for text/logo
-  const [bgVisible, setBgVisible] = useState(false);   // for background
+  const [isVisible, setIsVisible] = useState(false);
+  const [bgVisible, setBgVisible] = useState(false);
+  const [width, setWidth] = useState(window.innerWidth);
   const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setBgVisible(true);     // start background fade
-          setIsVisible(true);     // start text/logo fade
+          setBgVisible(true);
+          setIsVisible(true);
           observer.unobserve(entry.target);
         }
       },
       { threshold: 0.3 }
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
-  /* ---------- GLOBAL Helvetica ---------- */
-  const helvetica = {
-    fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-  };
+  const isMobile = width < 640;
+  const isTablet = width >= 640 && width < 1024;
+
+  const logoSize = isMobile ? '75px' : isTablet ? '110px' : '140px';
+  const logoTop = isMobile ? '15px' : isTablet ? '10px' : '20px';
+
+  const h1Size = isMobile ? '1.9rem' : isTablet ? '2.8rem' : '3.4rem';
+  const lineHeight = isMobile ? '1.1' : '1.15';
+
+  const helvetica = { fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif' };
+
+  const logoTransform = isVisible ? 'translateY(0)' : 'translateY(-40px)';
 
   return (
     <section
@@ -39,109 +50,118 @@ const Hero: React.FC = () => {
         backgroundImage: `url(${heroImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        padding: '120px 5% 80px',
         minHeight: '100vh',
-        height: '100vh',
+        padding: isMobile ? '120px 5% 60px' : '140px 8% 80px',
         display: 'flex',
         alignItems: 'center',
         overflow: 'hidden',
-
-        /* ---- Background fade-in ---- */
         opacity: bgVisible ? 1 : 0,
         transition: 'opacity 1.2s ease-out',
-        filter: bgVisible ? 'blur(0)' : 'blur(8px)',
       }}
     >
-      {/* Dark-to-light overlay */}
+      {/* Dark overlay + bottom fade-out */}
       <div
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.1))',
+          background: isMobile
+            ? 'linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.2))'
+            : 'linear-gradient(to right, rgba(0,0,0,0.75), rgba(0,0,0,0.2))',
           zIndex: 1,
         }}
       />
 
-      {/* ---------- LOGO ---------- */}
+      {/* Bottom fade to transparent (blends into next section) */}
       <div
         style={{
           position: 'absolute',
-          top: '-30px',
-          left: '10%',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: '150px',
+          background: 'linear-gradient(to bottom, transparent, #e4e8ee)',
+          zIndex: 2,
+          pointerEvents: 'none',
+        }}
+      />
+
+      {/* Logo */}
+      <img
+        src={logoImage}
+        alt="Lambert Brothers Logo"
+        style={{
+          position: 'absolute',
+          top: logoTop,
+          left: isMobile ? '50%' : '5%',
+          transform: isMobile
+            ? `translateX(-50%) ${logoTransform}`
+            : logoTransform,
+          height: logoSize,
+          width: 'auto',
           zIndex: 3,
           opacity: isVisible ? 1 : 0,
-          transform: isVisible ? 'translateY(0)' : 'translateY(-20px)',
-          transition: 'all 0.7s ease 0.1s',
+          transition: 'all 0.9s ease-out',
         }}
-      >
-        <img
-          src={logoImage}
-          alt="Lambert Brothers Logo"
-          style={{ height: '400px', width: 'auto' }}
-        />
-      </div>
+      />
 
-      {/* ---------- MAIN CONTENT ---------- */}
+      {/* Content */}
       <div
         style={{
           position: 'relative',
-          zIndex: 2,
-          maxWidth: '600px',
-          marginLeft: '5%',
+          zIndex: 3,
+          maxWidth: isMobile ? '95%' : '700px',
+          margin: isMobile ? '0 auto' : '0',
+          textAlign: isMobile ? 'center' : 'left',
           opacity: isVisible ? 1 : 0,
-          transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-          transition: 'all 0.8s ease 0.3s',
+          transform: isVisible ? 'translateY(0)' : 'translateY(50px)',
+          transition: 'all 1s ease 0.3s',
           ...helvetica,
         }}
       >
-        {/* ---- Heading with exact colour split ---- */}
         <h1
           style={{
-            fontSize: '3.8rem',
+            fontSize: h1Size,
             fontWeight: 'bold',
-            lineHeight: '1.1',
-            margin: '0 0 1rem 0',
-            textAlign: 'left',
+            lineHeight,
+            margin: '0 0 1.5rem',
+            color: '#fff',
           }}
         >
           <span style={{ color: '#2e2d78' }}>Smart </span>
-          <span style={{ color: '#fff' }}>Cover.</span>{' '}
+          <span>Cover.</span>
+          <br />
           <span style={{ color: '#2e2d78' }}>Personal </span>
-          <span style={{ color: '#fff' }}>Service.</span>{' '}
+          <span>Service.</span>
+          <br />
           <span style={{ color: '#2e2d78' }}>Trusted </span>
-          <span style={{ color: '#fff' }}>Advice.</span>
+          <span>Advice.</span>
         </h1>
 
-        {/* ---- Sub-heading ---- */}
         <p
           style={{
-            fontSize: '1.25rem',
+            fontSize: isMobile ? '0.95rem' : '1.1rem',
             lineHeight: '1.6',
-            margin: '1.5rem 0 2.5rem',
+            margin: '0 0 2.5rem',
             color: '#e0e0e0',
-            textAlign: 'left',
+            maxWidth: '600px',
           }}
         >
           Lambert Brothers - trusted since 1997. Independent advice in healthcare, life, and short-term insurance.
         </p>
 
-        {/* ---- CTA Button ---- */}
         <a
           href="#contact"
           style={{
             display: 'inline-block',
             backgroundColor: '#2e2d78',
             color: '#fff',
-            fontSize: '1.1rem',
+            fontSize: isMobile ? '0.95rem' : '1.05rem',
             fontWeight: 'bold',
-            padding: '14px 36px',
-            border: '1px solid #2e2d78',
+            padding: isMobile ? '11px 30px' : '13px 38px',
             borderRadius: '50px',
             textDecoration: 'none',
-            transition: 'all 0.3s ease-in-out',
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-            ...helvetica,
+            border: '2px solid #2e2d78',
+            transition: 'all 0.3s ease',
           }}
           onMouseEnter={e => {
             e.currentTarget.style.backgroundColor = '#fff';

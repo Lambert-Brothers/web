@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { CheckCircle } from 'lucide-react';
-import familyImage from '../assets/family.webp'; // Ensure this path is correct
+import familyImage from '../assets/AboutUs.jpeg';
 
 const AboutUs: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -100,35 +100,35 @@ const AboutUs: React.FC = () => {
 
             {/* CTA Button */}
             <div className="flex justify-center mt-8">
-            <a
-              href="#contact"
-              className="mt-8 inline-block text-center"
-              style={{
-                display: 'inline-block',
-                backgroundColor: '#2e2d78',
-                color: '#fff',
-                fontSize: '1.1rem',
-                fontWeight: 'bold',
-                padding: '14px 36px',
-                border: '1px solid #2e2d78',
-                borderRadius: '50px',
-                textDecoration: 'none',
-                transition: 'all 0.3s ease-in-out',
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                ...helvetica,
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#fff';
-                e.currentTarget.style.color = '#2e2d78';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#2e2d78';
-                e.currentTarget.style.color = '#fff';
-              }}
-            >
-              LET'S TALK ABOUT YOUR COVER
-            </a>
+              <a
+                href="#contact"
+                className="mt-8 inline-block text-center"
+                style={{
+                  display: 'inline-block',
+                  backgroundColor: '#2e2d78',
+                  color: '#fff',
+                  fontSize: '1.1rem',
+                  fontWeight: 'bold',
+                  padding: '14px 36px',
+                  border: '1px solid #2e2d78',
+                  borderRadius: '50px',
+                  textDecoration: 'none',
+                  transition: 'all 0.3s ease-in-out',
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                  ...helvetica,
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#fff';
+                  e.currentTarget.style.color = '#2e2d78';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#2e2d78';
+                  e.currentTarget.style.color = '#fff';
+                }}
+              >
+                LET'S TALK ABOUT YOUR COVER
+              </a>
             </div>
           </div>
         </div>
