@@ -1,25 +1,26 @@
 {
   "files": {
-    "main.css": "/web/static/css/main.7ff0b4fd.css",
-    "main.js": "/web/static/js/main.bc2e3d8c.js",
+    "main.css": "/web/static/css/main.1a5dd3e6.css",
+    "main.js": "/web/static/js/main.fe58a682.js",
     "static/media/commercial-modal.webp": "/web/static/media/commercial-modal.59a859fc6c4790d7d31e.webp",
-    "static/media/offices.webp": "/web/static/media/offices.898cf2fd596e728ce2f5.webp",
+    "static/media/Footer.jpeg": "/web/static/media/Footer.51a920f07b361755c66d.jpeg",
     "static/media/specialist-modal.webp": "/web/static/media/specialist-modal.4928d1337b0e3f48a202.webp",
+    "static/media/AboutUs.jpeg": "/web/static/media/AboutUs.bee39cf248bb88003e65.jpeg",
     "static/media/specialist.webp": "/web/static/media/specialist.259857c665b4fac17555.webp",
-    "static/media/family.webp": "/web/static/media/family.b045dd9d6cdcf4deb29c.webp",
+    "static/media/Footer2.jpeg": "/web/static/media/Footer2.a404dcb7a4165122502d.jpeg",
     "static/media/domestic-modal.webp": "/web/static/media/domestic-modal.9f69695129382b0019eb.webp",
     "static/media/commercial.webp": "/web/static/media/commercial.709752dc731d5607214c.webp",
     "static/media/personal.webp": "/web/static/media/personal.61e603abea93c3ddbff5.webp",
-    "static/media/her.webp": "/web/static/media/her.80090442cb5e60ece4ee.webp",
+    "static/media/hero.jpg": "/web/static/media/hero.c366f4bb63487101caba.jpg",
     "static/media/domestic.webp": "/web/static/media/domestic.0a00669d760497b2d6dd.webp",
+    "static/media/Lambert Brothers.svg": "/web/static/media/Lambert Brothers.c4bbf4f86ec5ab810c61a102f469dc7d.svg",
     "static/media/personal-modal.webp": "/web/static/media/personal-modal.56b8220565160dd4128f.webp",
-    "static/media/JPEG_LB_Logo-removebg-preview.webp": "/web/static/media/JPEG_LB_Logo-removebg-preview.eac86281152274f1d956.webp",
     "index.html": "/web/index.html",
-    "main.7ff0b4fd.css.map": "/web/static/css/main.7ff0b4fd.css.map",
-    "main.bc2e3d8c.js.map": "/web/static/js/main.bc2e3d8c.js.map"
+    "main.1a5dd3e6.css.map": "/web/static/css/main.1a5dd3e6.css.map",
+    "main.fe58a682.js.map": "/web/static/js/main.fe58a682.js.map"
   },
   "entrypoints": [
-    "static/css/main.7ff0b4fd.css",
-    "static/js/main.bc2e3d8c.js"
+    "static/css/main.1a5dd3e6.css",
+    "static/js/main.fe58a682.js"
   ]
 }
