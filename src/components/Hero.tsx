@@ -60,16 +60,7 @@ const Hero: React.FC = () => {
       }}
     >
       {/* Dark overlay + bottom fade-out */}
-      <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          background: isMobile
-            ? 'linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.2))'
-            : 'linear-gradient(to right, rgba(0,0,0,0.75), rgba(0,0,0,0.2))',
-          zIndex: 1,
-        }}
-      />
+
 
       {/* Bottom fade to transparent (blends into next section) */}
       <div
@@ -111,6 +102,7 @@ const Hero: React.FC = () => {
           zIndex: 3,
           maxWidth: isMobile ? '95%' : '700px',
           margin: isMobile ? '0 auto' : '0',
+          marginTop: isMobile ? '0px' : '50px',
           textAlign: isMobile ? 'center' : 'left',
           opacity: isVisible ? 1 : 0,
           transform: isVisible ? 'translateY(0)' : 'translateY(50px)',
@@ -142,8 +134,8 @@ const Hero: React.FC = () => {
             fontSize: isMobile ? '0.95rem' : '1.1rem',
             lineHeight: '1.6',
             margin: '0 0 2.5rem',
-            color: '#e0e0e0',
-            maxWidth: '600px',
+            color: '#2e2d78',
+            maxWidth: '550px',
           }}
         >
           Lambert Brothers - trusted since 1997. Independent advice in healthcare, life, and short-term insurance.

@@ -3,61 +3,63 @@ import React, { useState, useEffect, useRef } from 'react';
 import { X } from 'lucide-react';
 
 // Assets
-import domesticImg from '../assets/domestic.webp';
+import domesticImg from '../assets/personal.jpg';
 import commercialImg from '../assets/commercial.webp';
-import specialistImg from '../assets/specialist.webp';
-import personalNewImg from '../assets/personal.webp';
 
 import domesticModalImg from '../assets/personal-modal.webp';
 import commercialModalImg from '../assets/commercial-modal.webp';
-import specialistModalImg from '../assets/specialist-modal.webp';
-import personalNewModalImg from '../assets/domestic-modal.webp';
 
 // Service Data
 const services = [
   {
-    id: 'domestic',
-    title: 'DOMESTIC',
-    modalTitle: 'DOMESTIC INSURANCE',
+    id: 'personal',
+    title: 'FOR PEOPLE',
+    modalTitle: 'PERSONAL INSURANCE',
     img: domesticImg,
     modalImg: domesticModalImg,
-    description1:
-      "Your world deserves the right protection - whether it's the home you've built, the car you drive, or the things that make life special. At Lambert Brothers, we take a hands-on approach to helping you choose cover that fits your lifestyle, giving you peace of mind when it matters most.",
-    description2:
-      "With access to leading insurers and decades of expertise, we'll guide you through the options and tailor a solution that protects what matters most to you and your family.",
+    description:
+      "Life is full of moving parts - your home, your health, your family, and everything you've worked hard to build. At Lambert Brothers, we help individuals and families protect what matters most through thoughtful, personalised insurance solutions.\n\nOur hands-on, independent approach means we take the time to understand your lifestyle and priorities before recommending cover. With access to leading insurers and medical schemes, we ensure your protection remains relevant, competitive, and tailored - so you're never left exposed when life takes an unexpected turn.\n\nWith decades of experience and a commitment to personal service, we offer peace of mind today and security for the future.",
+    coverTitle: 'Personal Cover We Provide:',
+    coverItems: [
+      'Houseowners (Buildings) Insurance',
+      'Householders (Contents) Insurance',
+      'Portable Possessions / All Risks',
+      'Vehicle & Motorcycle Insurance',
+      'Caravans & Trailers',
+      'Watercraft',
+      'Solar Installations',
+      'Personal Liability Cover',
+      'Cybercrime Protection',
+      'Medical Aid',
+      'Gap Cover',
+      'Life Insurance',
+    ],
   },
   {
     id: 'commercial',
-    title: 'COMMERCIAL',
+    title: 'FOR BUSINESS',
     modalTitle: 'COMMERCIAL INSURANCE',
     img: commercialImg,
     modalImg: commercialModalImg,
-    description1:
-      "Your business is your legacy, and protecting it requires more than just coverage — it demands strategic foresight. At Lambert Brothers, we partner with you to understand your operations, risks, and goals, crafting robust commercial insurance solutions that safeguard your assets, employees, and future growth.",
-    description2:
-      "From liability and property protection to specialised industry coverage, our access to top-tier insurers and decades of expertise ensure your business is resilient, compliant, and ready for whatever comes next.",
-  },
-  {
-    id: 'specialist',
-    title: 'SPECIALIST',
-    modalTitle: 'SPECIALIST INSURANCE',
-    img: specialistImg,
-    modalImg: specialistModalImg,
-    description1:
-      "For unique risks that demand tailored solutions — from agriculture and commercial transporters to special events and hospitality — we deliver specialist short-term insurance that goes beyond standard policies.",
-    description2:
-      "With deep industry knowledge and partnerships with niche insurers, we protect high-value assets, seasonal operations, and complex exposures with precision and confidence.",
-  },
-  {
-    id: 'personal',
-    title: 'PERSONAL',
-    modalTitle: 'PERSONAL INSURANCE',
-    img: personalNewImg,
-    modalImg: personalNewModalImg,
-    description1:
-      "Your health, life, and financial future matter. We specialise in medical aid, gap cover, life insurance, and income protection — ensuring you and your loved ones are covered when it counts.",
-    description2:
-      "With access to top medical schemes and life insurers, we simplify complex choices and design plans that evolve with your life stages.",
+    description:
+      "Running a business means facing a wide range of risks - from protecting your physical assets to guarding against liability and professional exposure. At Lambert Brothers, we work closely with businesses of all sizes to understand your unique risk landscape and design insurance solutions that give you confidence and continuity.\n\nOur hands-on, independent approach means we take time to learn about your business and its challenges before recommending tailored cover that helps protect your people, operations and reputation. With access to leading insurers and decades of expertise, we help you stay ahead of risk so you can focus on growth and success.",
+    coverTitle: 'Business Cover We Provide:',
+    coverItems: [
+      'Commercial Property & Assets',
+      'Business Interruption',
+      'Public & General Liability',
+      'Professional Indemnity',
+      'Directors & Officers (D&O) Liability',
+      'Cyber, Crime & Fraud Protection',
+      "Employer's Liability & Workforce Risks",
+      'Commercial Motor & Fleet',
+      'Hospitality & Restaurant Insurance',
+      'Agricultural Insurance',
+      'Construction & Engineering',
+      'Body Corporate & Sectional Title',
+      'Goods in Transit & Marine',
+      'Specialist & Industry-Specific Cover',
+    ],
   },
 ];
 
@@ -71,7 +73,7 @@ const OurServices: React.FC = () => {
   const [activeModal, setActiveModal] = useState<string | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
-  /* Trigger animation when 80% of section is in viewport */
+  /* Trigger animation when 50% of section is in viewport */
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -97,6 +99,15 @@ const OurServices: React.FC = () => {
   const activeService = activeModal
     ? services.find((s) => s.id === activeModal)
     : null;
+
+  // Split cover items into two columns
+  const splitCoverItems = (items: string[]) => {
+    const midpoint = Math.ceil(items.length / 2);
+    return {
+      left: items.slice(0, midpoint),
+      right: items.slice(midpoint),
+    };
+  };
 
   return (
     <>
@@ -125,26 +136,22 @@ const OurServices: React.FC = () => {
             </p>
           </div>
 
-          {/* 4-column grid */}
-          <div className="grid md:grid-cols-4 gap-8 items-start">
+          {/* 2-column grid */}
+          <div className="grid md:grid-cols-2 gap-12 items-start max-w-5xl mx-auto">
             {services.map((service, index) => (
               <div
                 key={service.id}
                 className={`max-w-2xl mx-auto text-center transition-all duration-1000 ${isVisible
-                  ? index % 2 === 0
-                    ? 'translate-y-0 opacity-100'
-                    : '-translate-y-0 opacity-100'
-                  : index % 2 === 0
-                    ? 'translate-y-24 opacity-0'
-                    : '-translate-y-24 opacity-0'
+                  ? 'translate-y-0 opacity-100'
+                  : 'translate-y-24 opacity-0'
                   }`}
                 style={{ transitionDelay: `${300 + index * 200}ms` }}
               >
-                <div className="overflow-hidden rounded-xl shadow-2xl mb-4 bg-white">
+                <div className="overflow-hidden rounded-xl shadow-2xl mb-6 bg-white">
                   <img
                     src={service.img}
                     alt={service.title}
-                    className="w-full h-[24rem] object-cover" // Reduced height
+                    className="w-full h-[28rem] object-cover"
                   />
                 </div>
 
@@ -170,7 +177,7 @@ const OurServices: React.FC = () => {
           onClick={() => setActiveModal(null)}
         >
           <div
-            className="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative animate-in fade-in zoom-in duration-300"
+            className="bg-white rounded-2xl shadow-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto relative animate-in fade-in zoom-in duration-300"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -189,14 +196,14 @@ const OurServices: React.FC = () => {
                 {activeService.modalTitle}
               </h2>
 
-              <div className="grid md:grid-cols-2 gap-8 items-center">
+              {/* Top section: Description and Image */}
+              <div className="grid md:grid-cols-2 gap-8 items-start mb-12">
                 <div>
-                  <p className="text-gray-700 leading-relaxed mb-4">
-                    {activeService.description1}
-                  </p>
-                  <p className="text-gray-700 leading-relaxed">
-                    {activeService.description2}
-                  </p>
+                  {activeService.description.split('\n\n').map((paragraph, idx) => (
+                    <p key={idx} className="text-gray-700 leading-relaxed mb-4">
+                      {paragraph}
+                    </p>
+                  ))}
                 </div>
 
                 <div className="overflow-hidden rounded-lg shadow-lg">
@@ -206,6 +213,42 @@ const OurServices: React.FC = () => {
                     className="w-full h-auto object-cover"
                     loading="eager"
                   />
+                </div>
+              </div>
+
+              {/* Bottom section: Cover heading and bullet points */}
+              <div className="mt-8">
+                <h3
+                  className="text-2xl font-bold mb-6 text-center"
+                  style={{ color: '#2e2d78' }}
+                >
+                  {activeService.coverTitle}
+                </h3>
+
+                <div className="grid md:grid-cols-2 gap-x-8 gap-y-2">
+                  {(() => {
+                    const { left, right } = splitCoverItems(activeService.coverItems);
+                    return (
+                      <>
+                        <div className="space-y-2">
+                          {left.map((item, idx) => (
+                            <div key={idx} className="flex items-start">
+                              <span className="text-[#2e2d78] mr-2 flex-shrink-0">•</span>
+                              <span className="text-gray-700">{item}</span>
+                            </div>
+                          ))}
+                        </div>
+                        <div className="space-y-2">
+                          {right.map((item, idx) => (
+                            <div key={idx} className="flex items-start">
+                              <span className="text-[#2e2d78] mr-2 flex-shrink-0">•</span>
+                              <span className="text-gray-700">{item}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </>
+                    );
+                  })()}
                 </div>
               </div>
             </div>

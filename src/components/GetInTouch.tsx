@@ -77,7 +77,7 @@ const GetInTouch: React.FC = () => {
             <div className="flex items-center">
               <Phone className="w-5 h-5 mr-3" style={{ color: '#2e2d78' }} />
               <a href="tel:+27315665511" className="text-lg font-medium hover:underline" style={{ color: '#2e2d78' }}>
-                +27 (0)31 566 5511
+                +27 031 566 5511
               </a>
             </div>
 
@@ -87,6 +87,7 @@ const GetInTouch: React.FC = () => {
                 'iain@lambertbrothers.co.za',
                 'peter@lambertbrothers.co.za',
                 'garth@lambertbrothers.co.za',
+                'alan.barter@outlook.com',
                 'sharon@lambertbrothers.co.za',
                 'kirsten@lambertbrothers.co.za',
               ].map((email) => (

@@ -1,45 +1,38 @@
 import React, { useState, useEffect } from 'react';
-import { Star } from 'lucide-react';
 
 const Reviews: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const reviews = [
     {
-      name: "Elvira Montanez",
+      name: "Michelle",
       content:
-        "Boost your product and service's credibility by adding testimonials from your clients. People love recommendations so feedback from others who've tried it is invaluable.",
-      rating: 5,
+        "We've been with Lambert Brothers for many years, and what's kept us there is the personal service. They don't just renew policies and move on - they actually review our cover and explain what's changing and why. It's reassuring to deal with people who genuinely care.",
     },
     {
-      name: "Casper Berkley",
+      name: "Geoff",
       content:
-        "Boost your product and service's credibility by adding testimonials from your clients. People love recommendations so feedback from others who've tried it is invaluable.",
-      rating: 5,
+        "Lambert Brothers understand our business and provide clear, practical advice with fast, professional support when it matters most.",
     },
     {
-      name: "Daniel Gallego",
+      name: "Leanne",
       content:
-        "Boost your product and service's credibility by adding testimonials from your clients. People love recommendations so feedback from others who've tried it is invaluable.",
-      rating: 5,
+        "Choosing medical aid felt overwhelming, but Lambert Brothers made it much easier. They explained the options in plain language and helped us choose cover that actually suits our family. The gap cover recommendation was spot on too.",
     },
     {
-      name: "Sarah Johnson",
+      name: "Sibusiso",
       content:
-        "Lambert Brothers provided exceptional service when I needed home insurance. Their attention to detail and personalized approach made all the difference.",
-      rating: 5,
+        "You don't really appreciate a good broker until you have to claim. Lambert Brothers guided us through the process and stayed involved from start to finish. Having someone knowledgeable and calm on your side makes all the difference.",
     },
     {
-      name: "Michael Chen",
+      name: "Lerato",
       content:
-        "Professional, reliable, and trustworthy. They helped me find the perfect coverage for my business at a competitive rate.",
-      rating: 5,
+        "What I value most about Lambert Brothers is their honesty. They're not trying to sell you things you don't need - they focus on what makes sense. That level of integrity is why we trust them with our business insurance.",
     },
     {
-      name: "Emily Rodriguez",
+      name: "Gavin",
       content:
-        "As a first-time insurance buyer, they made the process simple and stress-free. Their expertise and patience helped me understand exactly what I needed.",
-      rating: 5,
+        "Lambert Brothers handle both my personal insurance and my business cover, which simplifies everything. They understand the bigger picture and adjust things as circumstances change. It feels more like a relationship than a transaction.",
     },
   ];
 
@@ -48,25 +41,19 @@ const Reviews: React.FC = () => {
   // Auto-slide every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => prev + 1);
+      setCurrentIndex((prev) => {
+        if (prev === totalSlides - 1) {
+          return 0;
+        }
+        return prev + 1;
+      });
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [totalSlides]);
 
   const goToSlide = (idx: number) => {
     setCurrentIndex(idx);
   };
-
-  const StarRating = ({ rating }: { rating: number }) => (
-    <div className="flex items-center space-x-1">
-      {[...Array(rating)].map((_, i) => (
-        <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-      ))}
-    </div>
-  );
-
-  // Duplicate reviews for infinite loop
-  const displayReviews = [...reviews, ...reviews, ...reviews];
 
   return (
     <section className="py-16 bg-white">
@@ -76,7 +63,7 @@ const Reviews: React.FC = () => {
           className="text-3xl sm:text-4xl font-bold text-center mb-12"
           style={{ color: '#2e2d78' }}
         >
-          Feedback from our clients
+          What Our Client's Say
         </h2>
 
         {/* ====================== DESKTOP: 3 Cards ====================== */}
@@ -88,7 +75,7 @@ const Reviews: React.FC = () => {
                 transform: `translateX(-${currentIndex * (100 / 3)}%)`,
               }}
             >
-              {displayReviews.map((review, idx) => (
+              {reviews.map((review, idx) => (
                 <div
                   key={idx}
                   className="flex-shrink-0"
@@ -107,8 +94,7 @@ const Reviews: React.FC = () => {
                     }}
                   >
                     <div>
-                      <StarRating rating={review.rating} />
-                      <p className="mt-4 text-gray-600 text-sm leading-relaxed">
+                      <p className="text-gray-600 text-sm leading-relaxed">
                         {review.content}
                       </p>
                     </div>
@@ -130,11 +116,10 @@ const Reviews: React.FC = () => {
               <button
                 key={i}
                 onClick={() => goToSlide(i)}
-                className={`h-1.5 rounded-full transition-all duration-300 ${
-                  i === currentIndex % totalSlides
+                className={`h-1.5 rounded-full transition-all duration-300 ${i === currentIndex
                     ? 'bg-[#2e2d78] w-12'
                     : 'bg-gray-300 w-8'
-                }`}
+                  }`}
                 aria-label={`Go to review ${i + 1}`}
               />
             ))}
@@ -158,8 +143,7 @@ const Reviews: React.FC = () => {
                       boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
                     }}
                   >
-                    <StarRating rating={review.rating} />
-                    <p className="mt-4 text-gray-600 text-sm leading-relaxed">
+                    <p className="text-gray-600 text-sm leading-relaxed">
                       {review.content}
                     </p>
                     <p
@@ -180,9 +164,8 @@ const Reviews: React.FC = () => {
               <button
                 key={i}
                 onClick={() => goToSlide(i)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  i === currentIndex % totalSlides ? 'bg-[#2e2d78]' : 'bg-gray-300'
-                }`}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${i === currentIndex ? 'bg-[#2e2d78]' : 'bg-gray-300'
+                  }`}
                 aria-label={`Go to review ${i + 1}`}
               />
             ))}
