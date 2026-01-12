@@ -1,26 +1,22 @@
 {
   "files": {
-    "main.css": "/web/static/css/main.1a5dd3e6.css",
-    "main.js": "/web/static/js/main.fe58a682.js",
+    "main.css": "/web/static/css/main.2d8483fd.css",
+    "main.js": "/web/static/js/main.233aea86.js",
     "static/media/commercial-modal.webp": "/web/static/media/commercial-modal.59a859fc6c4790d7d31e.webp",
     "static/media/Footer.jpeg": "/web/static/media/Footer.51a920f07b361755c66d.jpeg",
-    "static/media/specialist-modal.webp": "/web/static/media/specialist-modal.4928d1337b0e3f48a202.webp",
     "static/media/AboutUs.jpeg": "/web/static/media/AboutUs.bee39cf248bb88003e65.jpeg",
-    "static/media/specialist.webp": "/web/static/media/specialist.259857c665b4fac17555.webp",
     "static/media/Footer2.jpeg": "/web/static/media/Footer2.a404dcb7a4165122502d.jpeg",
-    "static/media/domestic-modal.webp": "/web/static/media/domestic-modal.9f69695129382b0019eb.webp",
+    "static/media/personal.jpg": "/web/static/media/personal.f3fadad8ae21acea9b9a.jpg",
     "static/media/commercial.webp": "/web/static/media/commercial.709752dc731d5607214c.webp",
-    "static/media/personal.webp": "/web/static/media/personal.61e603abea93c3ddbff5.webp",
     "static/media/hero.jpg": "/web/static/media/hero.c366f4bb63487101caba.jpg",
-    "static/media/domestic.webp": "/web/static/media/domestic.0a00669d760497b2d6dd.webp",
     "static/media/Lambert Brothers.svg": "/web/static/media/Lambert Brothers.c4bbf4f86ec5ab810c61a102f469dc7d.svg",
     "static/media/personal-modal.webp": "/web/static/media/personal-modal.56b8220565160dd4128f.webp",
     "index.html": "/web/index.html",
-    "main.1a5dd3e6.css.map": "/web/static/css/main.1a5dd3e6.css.map",
-    "main.fe58a682.js.map": "/web/static/js/main.fe58a682.js.map"
+    "main.2d8483fd.css.map": "/web/static/css/main.2d8483fd.css.map",
+    "main.233aea86.js.map": "/web/static/js/main.233aea86.js.map"
   },
   "entrypoints": [
-    "static/css/main.1a5dd3e6.css",
-    "static/js/main.fe58a682.js"
+    "static/css/main.2d8483fd.css",
+    "static/js/main.233aea86.js"
   ]
 }
