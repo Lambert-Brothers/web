@@ -51,7 +51,7 @@ const Hero: React.FC = () => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         minHeight: '100vh',
-        padding: isMobile ? '120px 5% 60px' : '140px 8% 80px',
+        padding: isMobile ? '0px 5% 60px' : '140px 8% 80px',
         display: 'flex',
         alignItems: 'center',
         overflow: 'hidden',

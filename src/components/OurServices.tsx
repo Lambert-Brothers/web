@@ -71,10 +71,27 @@ const helvetica = {
 const OurServices: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeModal, setActiveModal] = useState<string | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
-  /* Trigger animation when 50% of section is in viewport */
+  /* Detect mobile viewport */
   useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  /* Trigger animation when 50% of section is in viewport (desktop only) */
+  useEffect(() => {
+    if (isMobile) {
+      setIsVisible(true); // Always visible on mobile
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
@@ -85,7 +102,7 @@ const OurServices: React.FC = () => {
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
-  }, []);
+  }, [isMobile]);
 
   /* Close modal on Escape */
   useEffect(() => {
@@ -121,14 +138,18 @@ const OurServices: React.FC = () => {
           {/* Headings */}
           <div className="text-center mb-12">
             <h1
-              className={`text-5xl md:text-6xl font-bold transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+              className={`text-5xl md:text-6xl font-bold ${isMobile
+                  ? ''
+                  : `transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`
                 }`}
               style={{ color: '#2e2d78' }}
             >
               LET'S PROTECT
             </h1>
             <p
-              className={`text-2xl md:text-3xl font-medium mt-2 transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+              className={`text-2xl md:text-3xl font-medium mt-2 ${isMobile
+                  ? ''
+                  : `transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`
                 }`}
               style={{ color: '#2e2d78' }}
             >
@@ -141,11 +162,11 @@ const OurServices: React.FC = () => {
             {services.map((service, index) => (
               <div
                 key={service.id}
-                className={`max-w-2xl mx-auto text-center transition-all duration-1000 ${isVisible
-                  ? 'translate-y-0 opacity-100'
-                  : 'translate-y-24 opacity-0'
+                className={`max-w-2xl mx-auto text-center ${isMobile
+                    ? ''
+                    : `transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-24 opacity-0'}`
                   }`}
-                style={{ transitionDelay: `${300 + index * 200}ms` }}
+                style={isMobile ? {} : { transitionDelay: `${300 + index * 200}ms` }}
               >
                 <div className="overflow-hidden rounded-xl shadow-2xl mb-6 bg-white">
                   <img

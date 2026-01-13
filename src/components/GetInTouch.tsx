@@ -6,14 +6,23 @@ import footerImg2 from '../assets/Footer2.jpeg';
 
 const GetInTouch: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    // Check if device is mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024); // lg breakpoint
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.unobserve(entry.target); // Optional: stop observing after trigger
+          observer.unobserve(entry.target);
         }
       },
       {
@@ -26,13 +35,22 @@ const GetInTouch: React.FC = () => {
       observer.observe(sectionRef.current);
     }
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', checkMobile);
+    };
   }, []);
+
+  // Helper function to apply animations only on desktop
+  const getAnimationClass = (animationClass: string) => {
+    if (isMobile) return 'opacity-100'; // Always visible on mobile
+    return isVisible ? 'opacity-100' : 'opacity-0';
+  };
 
   return (
     <section ref={sectionRef} id="contact" className="bg-[#e4e8ee]">
-      {/* Two 50/50 Images Banner - 450px height */}
-      <div className="relative w-full h-[450px] flex">
+      {/* Two 50/50 Images Banner - 450px height on desktop, 250px on mobile */}
+      <div className="relative w-full h-[250px] lg:h-[450px] flex">
         <img
           src={footerImg1}
           alt="Lambert Brothers"
@@ -46,18 +64,32 @@ const GetInTouch: React.FC = () => {
         <div className="absolute inset-0 bg-black/20" />
       </div>
 
-      {/* Rest of your content unchanged */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
         <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 items-start">
           {/* Left: Heading */}
-          <div className={`transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'}`}>
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight" style={{ color: '#2e2d78' }}>
+          <div
+            className={`transition-all duration-1000 ${isMobile
+                ? 'opacity-100'
+                : isVisible
+                  ? 'translate-x-0 opacity-100'
+                  : '-translate-x-12 opacity-0'
+              }`}
+          >
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight" style={{ color: '#2e2d78' }}>
               LET'S CONNECT
             </h2>
           </div>
 
           {/* Middle: Address Card */}
-          <div className={`transition-all duration-1000 delay-200 ${isVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}>
+          <div
+            className={`transition-all duration-1000 delay-200 ${isMobile
+                ? 'opacity-100'
+                : isVisible
+                  ? 'scale-100 opacity-100'
+                  : 'scale-95 opacity-0'
+              }`}
+          >
             <div className="bg-white rounded-2xl p-6 shadow-md border-2 border-[#2e2d78] max-w-xs mx-auto">
               <p className="text-sm text-gray-700 leading-relaxed">
                 Suite 6 Sunbury Park<br />
@@ -73,7 +105,14 @@ const GetInTouch: React.FC = () => {
           </div>
 
           {/* Right: Contact Details */}
-          <div className={`space-y-5 transition-all duration-1000 delay-400 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-12 opacity-0'}`}>
+          <div
+            className={`space-y-5 transition-all duration-1000 delay-400 ${isMobile
+                ? 'opacity-100'
+                : isVisible
+                  ? 'translate-x-0 opacity-100'
+                  : 'translate-x-12 opacity-0'
+              }`}
+          >
             <div className="flex items-center">
               <Phone className="w-5 h-5 mr-3" style={{ color: '#2e2d78' }} />
               <a href="tel:+27315665511" className="text-lg font-medium hover:underline" style={{ color: '#2e2d78' }}>
@@ -102,8 +141,15 @@ const GetInTouch: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom Left: Social Icons */}
-        <div className={`absolute bottom-8 left-8 flex space-x-4 transition-all duration-1000 delay-600 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+        {/* Bottom Left: Social Icons - absolute on desktop, relative on mobile */}
+        <div
+          className={`lg:absolute bottom-8 left-8 flex space-x-4 mt-8 lg:mt-0 justify-center lg:justify-start transition-all duration-1000 delay-600 ${isMobile
+              ? 'opacity-100'
+              : isVisible
+                ? 'translate-y-0 opacity-100'
+                : 'translate-y-8 opacity-0'
+            }`}
+        >
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-transform" title='Open Facebook'>
             <Facebook className="w-5 h-5" style={{ color: '#2e2d78' }} />
           </a>
