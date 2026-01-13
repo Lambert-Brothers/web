@@ -102,7 +102,7 @@ const Hero: React.FC = () => {
           zIndex: 3,
           maxWidth: isMobile ? '95%' : '700px',
           margin: isMobile ? '0 auto' : '0',
-          marginTop: isMobile ? '0px' : '50px',
+          marginTop: isMobile ? '35px' : '50px',
           textAlign: isMobile ? 'center' : 'left',
           opacity: isVisible ? 1 : 0,
           transform: isVisible ? 'translateY(0)' : 'translateY(50px)',
@@ -115,7 +115,7 @@ const Hero: React.FC = () => {
             fontSize: h1Size,
             fontWeight: 'bold',
             lineHeight,
-            margin: '0 0 1.5rem',
+            margin: '0 0 5.5rem',
             color: '#fff',
           }}
         >
@@ -133,7 +133,7 @@ const Hero: React.FC = () => {
           style={{
             fontSize: isMobile ? '0.95rem' : '1.1rem',
             lineHeight: '1.6',
-            margin: '0 0 2.5rem',
+            margin: '0 0 5.5rem',
             color: '#2e2d78',
             maxWidth: '550px',
           }}
