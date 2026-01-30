@@ -21,18 +21,21 @@ const services = [
       "Life is full of moving parts - your home, your health, your family, and everything you've worked hard to build. At Lambert Brothers, we help individuals and families protect what matters most through thoughtful, personalised insurance solutions.\n\nOur hands-on, independent approach means we take the time to understand your lifestyle and priorities before recommending cover. With access to leading insurers and medical schemes, we ensure your protection remains relevant, competitive, and tailored - so you're never left exposed when life takes an unexpected turn.\n\nWith decades of experience and a commitment to personal service, we offer peace of mind today and security for the future.",
     coverTitle: 'Personal Cover We Provide:',
     coverItems: [
-      'Houseowners (Buildings) Insurance',
-      'Householders (Contents) Insurance',
-      'Portable Possessions / All Risks',
-      'Vehicle & Motorcycle Insurance',
+      'Houseowners (Buildings)',
+      'Householders (Contents)',
+      'All Risks',
+      'Vehicles & Motorcycles',
       'Caravans & Trailers',
       'Watercraft',
-      'Solar Installations',
-      'Personal Liability Cover',
-      'Cybercrime Protection',
+      'Cyber Protection',
+      'Solar',
+      'Personal Liability',
+      'Personal Accident',
+      'Travel Insurance',
       'Medical Aid',
       'Gap Cover',
       'Life Insurance',
+      'Investments'
     ],
   },
   {
@@ -45,20 +48,34 @@ const services = [
       "Running a business means facing a wide range of risks - from protecting your physical assets to guarding against liability and professional exposure. At Lambert Brothers, we work closely with businesses of all sizes to understand your unique risk landscape and design insurance solutions that give you confidence and continuity.\n\nOur hands-on, independent approach means we take time to learn about your business and its challenges before recommending tailored cover that helps protect your people, operations and reputation. With access to leading insurers and decades of expertise, we help you stay ahead of risk so you can focus on growth and success.",
     coverTitle: 'Business Cover We Provide:',
     coverItems: [
-      'Commercial Property & Assets',
+      'Fire',
+      'Buildings Combined',
       'Business Interruption',
-      'Public & General Liability',
-      'Professional Indemnity',
-      'Directors & Officers (D&O) Liability',
-      'Cyber, Crime & Fraud Protection',
-      "Employer's Liability & Workforce Risks",
-      'Commercial Motor & Fleet',
-      'Hospitality & Restaurant Insurance',
-      'Agricultural Insurance',
-      'Construction & Engineering',
+      'Business All Risks',
+      'Office Contents',
+      'Electronic Equipment',
+      "Broadform Liability",
+      'Employers Liability',
+      'Professional Indemnity - PI',
+      'Personal Accident',
+      'Machinery Breakdown',
+      'Accidental Damage',
+      'Glass',
+      'Theft',
+      'Money',
+      'Fidelity Guarantee',
+      'Cyber Protection',
+      'Spray Irrigation Systems',
+      'Solar',
+      'Travel Insurance',
+      'Commercial Vehicles (Cars, LDVs, Fleet, Motorcycles, Trailers, Special Types, Plant, Farming Motorised & Non-Motorised)',
+      'Goods in Transit',
+      'Marine',
       'Body Corporate & Sectional Title',
-      'Goods in Transit & Marine',
-      'Specialist & Industry-Specific Cover',
+      'Construction & Engineering',
+      'Agricultural',
+      'Hospitality',
+      'Education Risks'
     ],
   },
 ];
@@ -119,7 +136,7 @@ const OurServices: React.FC = () => {
 
   // Split cover items into two columns
   const splitCoverItems = (items: string[]) => {
-    const midpoint = Math.ceil(items.length / 2);
+    const midpoint = Math.floor(items.length / 2) + 1;
     return {
       left: items.slice(0, midpoint),
       right: items.slice(midpoint),
@@ -139,8 +156,8 @@ const OurServices: React.FC = () => {
           <div className="text-center mb-12">
             <h1
               className={`text-5xl md:text-6xl font-bold ${isMobile
-                  ? ''
-                  : `transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`
+                ? ''
+                : `transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`
                 }`}
               style={{ color: '#2e2d78' }}
             >
@@ -148,8 +165,8 @@ const OurServices: React.FC = () => {
             </h1>
             <p
               className={`text-2xl md:text-3xl font-medium mt-2 ${isMobile
-                  ? ''
-                  : `transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`
+                ? ''
+                : `transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`
                 }`}
               style={{ color: '#2e2d78' }}
             >
@@ -163,8 +180,8 @@ const OurServices: React.FC = () => {
               <div
                 key={service.id}
                 className={`max-w-2xl mx-auto text-center ${isMobile
-                    ? ''
-                    : `transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-24 opacity-0'}`
+                  ? ''
+                  : `transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-24 opacity-0'}`
                   }`}
                 style={isMobile ? {} : { transitionDelay: `${300 + index * 200}ms` }}
               >

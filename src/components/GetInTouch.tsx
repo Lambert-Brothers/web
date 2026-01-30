@@ -26,7 +26,7 @@ const GetInTouch: React.FC = () => {
         }
       },
       {
-        threshold: 0.7,
+        threshold: 0.6,
         rootMargin: '0px',
       }
     );
@@ -70,10 +70,10 @@ const GetInTouch: React.FC = () => {
           {/* Left: Heading */}
           <div
             className={`transition-all duration-1000 ${isMobile
-                ? 'opacity-100'
-                : isVisible
-                  ? 'translate-x-0 opacity-100'
-                  : '-translate-x-12 opacity-0'
+              ? 'opacity-100'
+              : isVisible
+                ? 'translate-x-0 opacity-100'
+                : '-translate-x-12 opacity-0'
               }`}
           >
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight" style={{ color: '#2e2d78' }}>
@@ -84,10 +84,10 @@ const GetInTouch: React.FC = () => {
           {/* Middle: Address Card */}
           <div
             className={`transition-all duration-1000 delay-200 ${isMobile
-                ? 'opacity-100'
-                : isVisible
-                  ? 'scale-100 opacity-100'
-                  : 'scale-95 opacity-0'
+              ? 'opacity-100'
+              : isVisible
+                ? 'scale-100 opacity-100'
+                : 'scale-95 opacity-0'
               }`}
           >
             <div className="bg-white rounded-2xl p-6 shadow-md border-2 border-[#2e2d78] max-w-xs mx-auto">
@@ -95,7 +95,9 @@ const GetInTouch: React.FC = () => {
                 Suite 6 Sunbury Park<br />
                 1 Sunbury Crescent<br />
                 Douglas Saunders Drive<br />
+                Block B, Suite 8<br />
                 La Lucia, 4051<br />
+                PO Box 4094, The Square, 4021<br />
                 <br />
                 Company Reg. CC1999/063647/23<br />
                 Authorised Financial Services<br />
@@ -107,10 +109,10 @@ const GetInTouch: React.FC = () => {
           {/* Right: Contact Details */}
           <div
             className={`space-y-5 transition-all duration-1000 delay-400 ${isMobile
-                ? 'opacity-100'
-                : isVisible
-                  ? 'translate-x-0 opacity-100'
-                  : 'translate-x-12 opacity-0'
+              ? 'opacity-100'
+              : isVisible
+                ? 'translate-x-0 opacity-100'
+                : 'translate-x-12 opacity-0'
               }`}
           >
             <div className="flex items-center">
@@ -144,16 +146,16 @@ const GetInTouch: React.FC = () => {
         {/* Bottom Left: Social Icons - absolute on desktop, relative on mobile */}
         <div
           className={`lg:absolute bottom-8 left-8 flex space-x-4 mt-8 lg:mt-0 justify-center lg:justify-start transition-all duration-1000 delay-600 ${isMobile
-              ? 'opacity-100'
-              : isVisible
-                ? 'translate-y-0 opacity-100'
-                : 'translate-y-8 opacity-0'
+            ? 'opacity-100'
+            : isVisible
+              ? 'translate-y-0 opacity-100'
+              : 'translate-y-8 opacity-0'
             }`}
         >
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-transform" title='Open Facebook'>
+          <a href=" https://www.facebook.com/profile.php?id=61586675068892" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-transform" title='Open Facebook'>
             <Facebook className="w-5 h-5" style={{ color: '#2e2d78' }} />
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-transform" title='Open LinkedIn'>
+          <a href=" https://www.linkedin.com/company/lambert-brothers-cc/about/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-transform" title='Open LinkedIn'>
             <Linkedin className="w-5 h-5" style={{ color: '#2e2d78' }} />
           </a>
           <a href="https://www.google.com/maps/search/?api=1&query=Lambert+Brothers+CC%2C+Suite+6%2C+1+Sunbury+Park%2C+Douglas+Saunders+drive%2C+La+Lucia%2C+4051" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-transform" title='Open Google Maps'>
