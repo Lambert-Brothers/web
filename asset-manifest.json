@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/web/static/css/main.c9f10698.css",
-    "main.js": "/web/static/js/main.228214dc.js",
+    "main.css": "/web/static/css/main.67deb94e.css",
+    "main.js": "/web/static/js/main.6869619a.js",
     "static/media/commercial-modal.webp": "/web/static/media/commercial-modal.59a859fc6c4790d7d31e.webp",
     "static/media/Footer.jpeg": "/web/static/media/Footer.51a920f07b361755c66d.jpeg",
     "static/media/AboutUs.jpeg": "/web/static/media/AboutUs.bee39cf248bb88003e65.jpeg",
@@ -12,11 +12,11 @@
     "static/media/Lambert Brothers.svg": "/web/static/media/Lambert Brothers.c4bbf4f86ec5ab810c61a102f469dc7d.svg",
     "static/media/personal-modal.webp": "/web/static/media/personal-modal.56b8220565160dd4128f.webp",
     "index.html": "/web/index.html",
-    "main.c9f10698.css.map": "/web/static/css/main.c9f10698.css.map",
-    "main.228214dc.js.map": "/web/static/js/main.228214dc.js.map"
+    "main.67deb94e.css.map": "/web/static/css/main.67deb94e.css.map",
+    "main.6869619a.js.map": "/web/static/js/main.6869619a.js.map"
   },
   "entrypoints": [
-    "static/css/main.c9f10698.css",
-    "static/js/main.228214dc.js"
+    "static/css/main.67deb94e.css",
+    "static/js/main.6869619a.js"
   ]
 }
