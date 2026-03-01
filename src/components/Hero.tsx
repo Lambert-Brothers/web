@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
   const isMobile = width < 640;
   const isTablet = width >= 640 && width < 1024;
 
-  const logoSize = isMobile ? '75px' : isTablet ? '110px' : '140px';
+  const logoSize = isMobile ? '100px' : isTablet ? '110px' : '140px';
   const logoTop = isMobile ? '15px' : isTablet ? '10px' : '20px';
 
   const h1Size = isMobile ? '1.9rem' : isTablet ? '2.8rem' : '3.4rem';

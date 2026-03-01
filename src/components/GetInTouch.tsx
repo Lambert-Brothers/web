@@ -92,11 +92,10 @@ const GetInTouch: React.FC = () => {
           >
             <div className="bg-white rounded-2xl p-6 shadow-md border-2 border-[#2e2d78] max-w-xs mx-auto">
               <p className="text-sm text-gray-700 leading-relaxed">
-                Suite 6 Sunbury Park<br />
                 1 Sunbury Crescent<br />
                 Douglas Saunders Drive<br />
-                Block B, Suite 8<br />
-                La Lucia, 4051<br />
+                Block B, Suite 8 Sunbury Park<br />
+                Durban, 4051<br />
                 PO Box 4094, The Square, 4021<br />
                 <br />
                 Company Reg. CC1999/063647/23<br />
