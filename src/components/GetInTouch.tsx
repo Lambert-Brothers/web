@@ -127,7 +127,7 @@ const GetInTouch: React.FC = () => {
                 'iain@lambertbrothers.co.za',
                 'peter@lambertbrothers.co.za',
                 'garth@lambertbrothers.co.za',
-                'alan.barter@outlook.com',
+                'alan@lambertbrothers.co.za',
                 'sharon@lambertbrothers.co.za',
                 'kirsten@lambertbrothers.co.za',
               ].map((email) => (
